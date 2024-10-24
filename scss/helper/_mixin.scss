@@ -1,0 +1,67 @@
+@use "./../layout/vars"as *;
+
+@mixin padding{
+    padding-top: $padding-section;
+    padding-bottom: $padding-section;
+}
+@mixin media($point){
+    @if $point == mobile {
+        @media (max-width:767px) {
+            @content;
+        }
+    }
+    @else if $point == small{
+        @media (min-width:768px) and (max-width:991px) {
+            @content;
+        }
+    }
+    @else if $point == medium{
+        @media (min-width:992px) and (max-width:1199px) {
+            @content;
+        }
+    }
+    @else if $point == large{
+        @media (min-width:1200px){
+            @content;
+        }
+    }
+}
+
+@mixin links($class, $color){
+    .#{$class}{
+        .img-holder::before{
+            background-color: rgb($color);
+        }
+        h2::after{
+            background-color: rgb($color);
+        }
+        a{
+            color: rgb($color);
+            border-color: rgb($color);
+            background:linear-gradient(to right, rgb($color) 50%, white 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+        }
+    }
+    .box:hover a{
+        background-position: left bottom;
+        color: white;
+    }
+}
+
+@mixin layout{
+    @include padding();
+    position: relative;
+    background-color: $section-background;
+    .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+        gap: 40px;
+    }
+}
+//grid
+@mixin grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}

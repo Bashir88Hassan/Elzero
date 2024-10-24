@@ -1,0 +1,11 @@
+// start galery
+.gallery#gallery
+    h2 Gallery
+    .container 
+        -  c = [".png", ".png", ".jpg", ".png", ".jpg", ".png"]
+        - for(let i =0; i<6; i++)
+            .box 
+                .image 
+                    img(src="../imgs/gallery-0"+(i+1)+c[i], alt="")
+.spikes
+// end galery

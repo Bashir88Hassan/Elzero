@@ -1,0 +1,23 @@
+// start events
+.events#envents 
+    .dots.dots-up 
+    .dots.dots-down
+    h2 Latest Events 
+    .container 
+        img(src="../imgs/events.png", alt="")
+        .info
+            .time 
+                - let t = ["15", "08", "45", "55"]
+                - let m = ["Days", 'Hour', 'Minutes', 'seconds']
+                - for(let i =0; i<4; i++)
+                    .unit 
+                        span #{t[i]}
+                        span #{m[i]}
+            h2.title Tech Masters Events 
+            p.description Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nesciunt itaque aliquam veniam, veritatis dolor id, quam ex ipsam explicabo tempore ipsum ipsa vitae. Molestias odit omnis impedit accusamus doloremque!
+        .subscribe  
+            form(action="") 
+                input(type="email", name="", placeholder="Enter your email")
+                input(type="submit", value="Subscribe")
+.spikes
+// end event

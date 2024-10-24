@@ -1,0 +1,17 @@
+// start Skills
+.ourskills 
+    h2 Our Skills 
+    .container 
+        .image 
+            img(src="../imgs/skills.png", alt="")
+        .skills 
+            - let skills = ["Html", "Css", "Js", "Python"];
+            - let prog   = ["80%", "95%", "60%", "70%"];
+            - for(let i = 0; i<4; i++)
+                .skill 
+                    h4 #{skills[i]}
+                        span #{prog[i]}
+                    .progrees 
+                        span(style = "width: 0" data-width= prog[i])
+.spikes
+// end Skills

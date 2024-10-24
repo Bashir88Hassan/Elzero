@@ -1,0 +1,15 @@
+// start work steps
+.work-steps#work-steps 
+    h2 Work Steps    
+    .container
+        img.image(src="../imgs/work-steps.png", alt="")
+        .info
+            - let titel = ["Business Analysis", "Architecture", "Devoloper"]
+            - for(let i =1 ; i<4; i++)
+                .box 
+                    img(src="../imgs/work-steps-"+i +".png", alt="")
+                    .text 
+                        h3 #{titel[i-1]}
+                        p Lorem ipsum dolor sit amet consectetur adipisicing elit.
+.spikes
+// end word steps

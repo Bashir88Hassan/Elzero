@@ -1,0 +1,88 @@
+/*start features*/
+@use './../helper/mixin'as*;
+@use './../layout/vars' as *;
+.features{
+background-color: white;
+
+    .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 40px;
+    }
+    .box{
+        text-align: center;
+        border: 1px solid #ccc;
+        .img-holder{
+            position: relative;
+            overflow: hidden;
+            &::before{
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+            &::after{
+                
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                border-style:solid;
+                border-width: 0px 0px 170px 400px;
+                border-color: transparent transparent white transparent;
+                transition: $main-transition;
+            }
+            
+        }
+        &:hover{
+            .img-holder::after{
+                right: -20px;
+                border-width: 170px 400px 170px 0px;
+            }
+        }
+        h2{
+            position: relative;
+            font-size: 40px;
+            margin: auto;
+            width: fit-content;
+            &::after{
+                content: "";
+                position: absolute;
+                bottom: -20px;
+                left: 15px;
+                height: 5px;
+                width: calc(100% - 30px);
+                
+            }
+        }
+        p{
+            line-height: 2;
+            font-size: 20px;
+            margin: 30px 0 ;
+            padding: 25px;
+            color: #777;
+        }
+        a{
+            display: block;
+            border: 3px solid transparent;
+            width: fit-content;
+            margin: 0 auto 30px;
+            font-weight: bold;
+            font-size: 22px;
+            padding: 10px 30px;
+            border-radius: 6px;
+            transition: $main-transition;
+            
+        }
+    }
+
+    $classes: ('quality':244 64 54 /60%, 'time': 0 150 136/60%, 'passion': 3 169 244/60% );
+    @each $class,$color in $classes{
+        
+        @include links($class, $color);
+    }
+    
+}
+/*end features*/

@@ -1,0 +1,13 @@
+// start services
+.services#services 
+    h2 Services
+    .container
+        - let icon = ["user-shield", "tools", "map-marked-alt","laptop", "palette", "bullhorn"]
+        - for(let i = 0 ;i<6;i++)
+            .box
+                i(class = "fas fa-"+icon[i]+" fa-4x") 
+                h3 Security 
+                .info 
+                    a(href="#") Details
+.spikes
+// end services

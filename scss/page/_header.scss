@@ -1,0 +1,143 @@
+/*start header*/
+@use './../layout/vars' as *;
+@use './../helper/mixin' as *;
+.header{
+    background-color: white;
+    box-shadow: 0 0 10px #ddd;
+    position: relative;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    .logo{
+        color: $main-color;
+        font-size: 24px;
+        font-weight: bold;
+        height: 72px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (max-width:767px) {
+            width: 100%;
+            height: 50px;
+        }
+    }
+    .main-nav{
+        display: flex;
+        @media (max-width:767px) {
+            margin: auto;
+        }
+        >li:hover .mega-menu{
+            opacity: 1;
+            z-index: 3;
+            top: calc(100% + 1px);
+        }
+        >li>a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 72px;
+            position: relative;
+            color: black;
+            padding: 0 30px;
+            transition: $main-transition;
+            overflow: hidden;
+            @media (max-width:767px) {
+                padding: 10px;
+                font-size: 14px;
+                height: 40px;
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 4px;
+                background-color: $main-color;
+                top: 0;
+                left: -100%;
+                transition: $main-transition;
+                
+            }
+            &:hover{
+                color: $main-color;
+                background-color: #fafafa;
+                &::before{
+                    left: 0;
+                }
+            }
+        }
+    }
+    .mega-menu{
+        position: absolute;
+        width: 100%;
+        left: 0;
+        padding: 30px;
+        background-color: white;
+        border-bottom: 3px solid $main-color;
+        z-index: -1;
+        display: flex;
+        gap: 40px;
+        top: calc(100% + 50px);
+        opacity: 0;
+        transition: top $main-transition, opacity $main-transition;
+        
+        @include media(mobile){
+            flex-direction: column;
+            gap: 0;
+            padding: 5px;
+            
+        }
+        .image{
+            img{
+                max-width: 100%;
+                @media (max-width: 991px) {
+                    display: none;
+                }
+            }
+        }
+        .links{
+            min-width: 250px;
+            flex: 1;
+            @include media(mobile){
+                &:first-of-type li:last-child{
+                    border-bottom: 1px solid #e9e9e9;
+                }
+            }
+            li{
+                position: relative;
+                &:not(:last-child){
+                    border-bottom : 1px solid #e9e6e6;
+                }
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0px;
+                    height: 100%;
+                    background-color: #fafafa;
+                    z-index: -1;
+                    transition: $main-transition;
+                    
+                }
+                &:hover::before{
+                    width: 100%;
+                }
+                a{
+                    color: $main-color;
+                    display: block;
+                    padding: 15px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    i{
+                        margin-right: 10px;
+                    }
+                }
+                
+            }
+        }
+    }
+}

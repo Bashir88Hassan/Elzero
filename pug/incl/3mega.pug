@@ -1,0 +1,23 @@
+// start Megamenu
+.mega-menu 
+    .image 
+        img(src="../imgs/megamenu.png", alt="")
+    ul.links 
+        - let c = ["comments", "user", "building", "check-circle", "clipboard"]
+        - let a = ["Testimonials", "Team Members", "Services", "Our Skills", "How it works"];
+        - for(let i = 0; i<5; i++)
+            li|
+                |
+                a(href="#" + a[i])
+                    i(class = "far fa-" + c[i] + " fa-fw")|
+                    |#{a[i]}
+    ul.links
+        - c = ["far fa-calendar-alt", "fas fa-server", "far fa-play-circle", "far fa-chart-bar", "fas fa-percent"]
+        - let qr = ["Events", "Pricing Plans", "Top Videos", "Stats", "Request A Discount"];
+        - for(let i = 0; i<5; i++)
+            li|
+                |
+                a( href = "#" + qr[i])
+                    i(class = c[i] + " fa-fw")|
+                    |#{qr[i]}
+    //end Megamenu

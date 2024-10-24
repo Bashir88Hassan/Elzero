@@ -1,0 +1,21 @@
+// start Team
+.team#team 
+    h2 Team Members
+    .container
+        - for(let i = 1; i<9; i++)
+            .box 
+                .data 
+                    img(src="../imgs/team-0"+i+".jpg", alt="")
+                    .social 
+                        a(href="#")
+                            i.fab.fa-facebook-f
+                        a(href="#")
+                            i.fab.fa-twitter
+                        a(href="#")
+                            i.fab.fa-linkedin-in
+                        a(href="#")
+                            i.fab.fa-youtube
+                .info 
+                    h3 name 
+                    p Simple Shor Description
+// End Team

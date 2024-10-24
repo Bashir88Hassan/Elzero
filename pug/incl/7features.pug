@@ -1,0 +1,15 @@
+// start features
+.features#features 
+    h2 features 
+    .container 
+        - let names = ["quality", "time", "passion"]
+        - for(let i = 1;i<4;i++)
+            div(class = "box " + names[i-1])
+                .img-holder 
+                    img(src="../imgs/features-0"+i+".jpg", alt="")
+                h2 #{names[i-1]}
+                p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur nostrum voluptatem, dolore, consequuntur eligendi quasi eum ab eos laudantium ut doloremque aspernatur dolorum? Quas accusamus quo libero sapiente. Iusto, accusantium.
+                a(href="#") More
+.spikes
+
+// end features

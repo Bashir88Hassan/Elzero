@@ -1,0 +1,93 @@
+/*Start discount*/
+@use './../layout/vars' as *;
+@use './../layout/globalRules' as *;
+.discount{
+    min-height: 100vh;
+    // display: flex;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    @media (max-width:991px) {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .image{
+        background-image: url("imgs/discount-background1.jpg");
+        background-size: cover;
+        color: white;
+        flex-basis: 50%;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+        animation: chang-background 10s linear infinite;
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(23 135 224 / 97%);
+            z-index: -1;
+        }
+        
+    }
+    .form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 50%;
+        
+        .input{
+            display: block;
+            width: 100%;
+            margin-bottom: 25px;
+            padding: 15px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            background-color: #f9f9f9;
+            caret-color: $main-color;
+        }
+        textarea.input{
+            resize: none;
+            height: 200px;
+            
+        }
+        .input:focus{
+            outline: none;
+        }
+        [type = "submit"]{
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background-color: $main-color;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+            transition: $main-transition;
+            &:hover{
+                background-color: $main-color-alt;
+            }
+        }
+    }
+    .content{
+        text-align: center;
+        padding: 0 20px;
+        h2{
+            font-size: 40px;
+            letter-spacing: -2px;
+        }
+        p{
+            line-height: 1.6;
+            font-size: 18px;
+            max-width: 500px;
+        }
+    }
+    img{
+        width: 300px;
+        max-width: 100%;
+    }
+}
+/*End discount*/
